@@ -37,4 +37,5 @@ jobs:
           echo "${{ secrets.SECRET_SSH_KEY }}" > ~/ssh-key.key
           chmod 600 ~/ssh-key.key
           ssh -i ~/ssh-key.key ${{ secrets.SECRET_URL }}
+          ls -al
           cd ${{ secrets.SECRET_APP_NAME }} && touch thisisit.txt
