@@ -34,4 +34,4 @@ jobs:
           echo "${{ secrets.SECRET_KNOWN_HOST }}" > ~/.ssh/known_hosts
           echo "${{ secrets.SECRET_SSH_KEY }}" > ~/ssh-key.key
           chmod 600 ~/ssh-key.key
-          ssh -i ~/ssh-key.key ${{ secrets.SECRET_URL }} 'cd ${{ secrets.SECRET_APP_NAME }}; pm2 stop ${{ secrets.SECRET_APP_NAME }}; git pull origin production; pm2 restart ${{ secrets.SECRET_APP_NAME }}'
+          ssh -i ~/ssh-key.key ${{ secrets.SECRET_URL }} 'cd ${{ secrets.SECRET_APP_NAME }}; pm2 stop ${{ secrets.SECRET_APP_NAME }}; git pull origin production; npm ci; pm2 restart ${{ secrets.SECRET_APP_NAME }}'
