@@ -36,5 +36,5 @@ jobs:
           echo "${{ secrets.SECRET_KNOWN_HOST }}" > ~/.ssh/known_hosts
           echo "${{ secrets.SECRET_SSH_KEY }}" > ~/ssh-key.key
           chmod 600 ~/ssh-key.key
-          ssh -i ~/ssh-key.key ${{ secrets.SECRETS_URL }}
-          cd ${{ secrets.SECRETS_APP_NAME }} && touch thisisit.txt
+          ssh -i ~/ssh-key.key ${{ secrets.SECRET_URL }}
+          cd ${{ secrets.SECRET_APP_NAME }} && touch thisisit.txt
